@@ -10,9 +10,9 @@ TO DO: ADD LINKS
 
 - Vector vs. Raster data models in GIS
 - Projections
+- Scale / Modifiable Areal Unit Problem (MAUP)
 - Cartographic design
-- Scale / Modifiable Areal Unit Problem
-- Edge Effect
+- Static vs interactive maps
 
 ## Terminology
 
@@ -56,11 +56,11 @@ The following are geographic data source I use regularly.
 
 #### Open Source Programming Libraries
 - [Geospatial Data Abstraction Library (GDAL)](https://gdal.org/) is an open-source library for managing geospatial data
-- D3.js is an open-source library for visualizing data
 - geojson.io allows you to edit GeoJSONs easily
 - Mapshaper
 - minjur is an open-source library for managing OSM data
 - osmosis is an open-source library for managing OSM data
+- osm2geojson is an open-source library for converting OSM data to GeoJSON(s)
 
 ## Spatial Data Storage
 
@@ -79,18 +79,20 @@ Below is a table I made in 2018, thought I'd just share it.
 
 ## Geo Visualizations
 
-- Leaflet is an open-source JS library to develop interactive maps
+For visualizing geographic information without coding, refer to the following:
+
 - Mapbox Studio is an open-source graphical interface for designing map layers as well as developing data-driven styling
-- Mapbox GL JS is an open-source library for developing interactive web maps
 - Mapbox Cartogram is an open-source tool to help design a map layer based on a reference image
-- osm2geojson is an open-source library for converting OSM data to GeoJSON(s)
 - Tableau
+
+For visualizing geographic information as web development maps, so JavaScript coding, refer to the following open source libraries:
 
 |    Name                     |    Features                                                                                                                                          |    Limitations                                                                                                                |
 |-----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
-|    Mapbox GL JS             |    ·     Open source   ·     Create 2D + 3D interactive maps   ·     Customisable   ·     Built on Leaflet.js + more   ·     Visualize 3D objects    |    ·     Documentation can be hard to follow                                                                                                                     |
-|    D3.js                    |    ·     Open source   ·     Customisable   ·     Create maps that can show movement (e.g., migration)                                               |    ·     Not as intuitive to develop with compared to other JavaScript   libraries   ·     For simple map visualizations      |
-|    Leaflet.js (Approved)    |    ·     Customisable   ·     Open source   ·     Create interactive maps   ·     Many third party extensions                                        |    ·     Less frequent development because the original creator now works at   Mapbox and works on developing Mapbox GL JS    |
+|   [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/overview/)             |    Create 2D + 3D interactive maps; Built on Leaflet.js + more; Visualize 3D objects    |   Documentation can be hard to follow; Some of their functions for visualizing map layers is not seamless (e.g., visualizing choropleth maps with a specific classification method requires coding your own function)                                                                                                                     |
+|    [D3.js](https://d3js.org/)                    |    Create 2D or 3D maps that can show movement (e.g., migration); useful for storytelling; doesn't need a basemap                                               |    Since D3 is not catered only to geo visualizations, D3 is not as intuitive to develop with compared to other JavaScript libraries; Only useful for simple map visualizations      |
+|    [Leaflet.js](https://leafletjs.com/)   |    Create 2D interactive maps; Many third party extensions support (leaflet for R and Python); Simple to use relative to other libraries, documentation is good                                      |    Less support (original creator of Leaflet now works at Mapbox)   |
+|    [Open Layers](https://openlayers.org/)    |  Flexible; Offers more features then Leaflet; Documentation is good; WET supported     |    Outdated library for web mapping, so transitions and interactivity is not as impressive compared to the other libraries   |
 
 ## Work Cited
 
