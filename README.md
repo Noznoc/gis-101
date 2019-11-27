@@ -1,22 +1,22 @@
-# Public / Open Source Tooling for Geographic Information Science/Analytics/Visualizations
+# Geographic Information Systems 101
 
-This documentation lists useful tools for manipulating, analyzing and visualizing geographic information. By no means is this list exhausted, rather it's a list of all the tools I have used and I think would be useful for others who want to start leveraging geographic information. Sometimes a paid or enterprise solution (e.g., ArcEnterprise, Tableau) makes sense if your use case is visualizing geographic information, such as for reporting to policy-makers; but if conducting data collection or analytics, then an open source work flow would make more sense for transparency and reproducibility (e.g., R, Python). Throughout this document I specify what tools are more useful depending on your goal and data.
+This documentation provides resources and documentation on terminology, theory and tools for manipulating, analyzing and visualizing geographic information. By no means is this document exhausted, rather it provides resources I have used and I think would be useful for others who want to start leveraging geographic information. Sometimes a paid or enterprise solution (e.g., ArcEnterprise, Tableau) makes sense if your use case is visualizing geographic information, such as for reporting to policy-makers; but if conducting data collection or analytics, then an open source work flow would make more sense for transparency and reproducibility (e.g., R, Python). Throughout this document I specify what tools are more useful depending on your goal and data.
 
-*For public servants: for those creating and working with geographic information, it is important to recognize that [TBS](https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=16553) has set geographic data standards, hence there are metadata standards. These standards align with the [Open Geospatial Consortium (OGC)](https://www.opengeospatial.org/), an international is an international consortium which aims to make geogaphic information and services "FAIR - Findable, Accessible, Interoperable, and Reusable."*
+*For public servants: for those creating and working with geographic information, it is important to recognize that [TBS](https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=16553) has set geographic data standards, hence there are metadata standards to improve interoperability. These standards align with the [Open Geospatial Consortium (OGC)](https://www.opengeospatial.org/), an international is an international consortium which aims to make geogaphic information and services "FAIR - Findable, Accessible, Interoperable, and Reusable."*
 
 Before jumping into geographic data visualization, I highly recommend reading the following blog posts on each of these foundational concepts in GIS:
 
-TO DO: ADD LINKS
-
-- Vector vs. Raster data models in GIS
-- Projections
-- Scale / Modifiable Areal Unit Problem (MAUP)
-- Cartographic design
-- Static vs interactive maps
+- [Mapping and Geographic Information Systems (GIS) : What is GIS?](https://researchguides.library.wisc.edu/GIS)
+- [Vector vs. Raster data models](https://gisgeography.com/spatial-data-types-vector-raster/)
+- [Map projections](https://www.gislounge.com/map-projection/)
+- [Scale / Modifiable Areal Unit Problem (MAUP)](https://www.gislounge.com/modifiable-areal-unit-problem-gis/)
+- [Cartographic design](https://gisgeography.com/map-elements-how-to-guide-map-making/)
+- [Tile maps](https://en.wikipedia.org/wiki/Tiled_web_map)
+- [Should a map be interactive?](https://www.axismaps.com/guide/web/should-a-map-be-interactive/)
 
 ## Terminology
 
-You'll hear Geographic Information Systems, Geographic Information Science, spatial analysis and spatial statistics.
+You'll hear names like Geographic Information Systems, Geographic Information Science, spatial analysis and spatial statistics; usually they get muddled into the same "geo" category, but the following section breaks down the difference between them.
 
 In general, Geographic Information Systems (GIS) leverages geospatial data, statistical/analytical methods and technologies to interpret the “real world”. These technologies (e.g., paid or open source software or programming libraries) are used to store, retrieve, manipulate and display geographic data, but can also support analysis and statistics (further explained below). Check out GIS Technical Architecture below to see what the technical architecture for a GIS.
 
@@ -25,7 +25,9 @@ Geographic Information Science (GIScience), on the other hand, studies data mode
 - Assessing the spatial distribution of spatially referenced social media posts
 - Synthesizing big heterogeneous geospatial data (e.g., street level images + social media posts + infrastructure datasets) to assess accessibility
 
-Spatial analysis and statistics, describes analytics and statistical concepts and methods that are conducted by Geographers (e.g. modifiable areal unit problem, spatial autocorrelation), which depends on a GIS. Spatial analysts, statisticians and scientists depends on a technical architecture to collect, store, manage, manipulate, run models, and visualize results.
+Essentially, GIScience supports improving a GIS. For further information on the difference between GIS and GIScience, check out [this resource](https://gisgeography.com/giscience-geographic-information-science/).
+
+Spatial analysis and statistics, describes analytics (e.g., overlay analysis) and statistical (e.g., spatial autocorrelation) concepts and methods that are conducted by Geographers, which *usually* depends on a GIS. Spatial analysts, statisticians and scientists depends on a technical architecture to collect, store, manage, manipulate, run models, and visualize results.
 
 ## *General* GIS Technical Architecture
 
@@ -39,9 +41,9 @@ The rest of this document discuss some data sources and the technologies to acco
 
 ## Geographic Open Data Sources
 
-The following are geographic data source I use regularly.
+Before setting up a GIS or conducting a spatial analysis, first thing is knowing what data you have available to use. The following are open geographic data source I use regularly:
 
-- [OpenStreetMap (OSM)](https://www.openstreetmap.org/), an international crowdsourcing project aimed at collecting an open source dataset of geographic information. Within Canada, there has been academic research to assess the quality of OSM data (Jacobs 2017; Zhang 2018)
+- [OpenStreetMap (OSM)](https://www.openstreetmap.org/), an international crowdsourcing project aimed at collecting an open source dataset of geographic information. Within Canada, there has been academic research to assess the quality of OSM data, particularly the road network, which researchers have concluded is accurate, though depends on your use case (Jacobs 2017; Zhang 2018). For example, road networks in Canada are reliable, but addresses are not complete in Canada. 
   - Download OSM data from [Geofabrik](https://www.geofabrik.de/data/download.html), a web site that allows you to download the data in different formats and at different geographic scales (e.g., Canada, provincial, territorial, cities)
   - Contribute and download OSM data from [Java OSM (JOSM)](https://josm.openstreetmap.de/). JOSM is an open-source graphic interface to contribute, edit, validate OSM data, but can also be used to extract and visualize geospatial data as well
 - Provincial and municipal open data portals
@@ -53,14 +55,17 @@ The following are geographic data source I use regularly.
 ### Desktop Software
 - [Esri proprietary software (ArcMap, ArcPro, ArcEnterprise, ArcOnline)](https://www.esri.com/en-us/home) can be used to manage, analyze, and visualize geospatial data. ArcPro is currently available to download in the department, and ArcEnterprise and ArcOnline will become more accessible to the department once deployed
 - [QGIS](https://qgis.org/en/site/) is an open-source graphical software that is most similar to ArcMap and ArcPro. It is used to manage, analyze, and visualize spatial data. QGIS uses GDAL and you can use various open source extensions to conduct specific analyses or visualizations
+- [Tableau](https://www.tableau.com/)
 
 #### Open Source Programming Libraries
 - [Geospatial Data Abstraction Library (GDAL)](https://gdal.org/) is an open-source library for managing geospatial data
 - geojson.io allows you to edit GeoJSONs easily
-- Mapshaper
-- minjur is an open-source library for managing OSM data
-- osmosis is an open-source library for managing OSM data
-- osm2geojson is an open-source library for converting OSM data to GeoJSON(s)
+- [Mapshaper](https://mapshaper.org/)
+
+##### OSM Data
+- [minjur](https://github.com/mapbox/minjur) manages OSM data, can convert large OSM data into geojson
+- [osmosis](https://github.com/openstreetmap/osmosis) manages OSM data
+- [osm2geojson](https://tyrasd.github.io/osmtogeojson/) converts OSM data to GeoJSON(s), there are multiple different version of it for different languages: [Node](https://github.com/rclark/osm2geojson), [Python](https://pypi.org/project/osm2geojson/)
 
 ## Spatial Data Storage
 
@@ -79,10 +84,13 @@ Below is a table I made in 2018, thought I'd just share it.
 
 ## Geo Visualizations
 
+For cartographic design:
+- [ColorBrewer](http://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3) was developed by Cynthia Brwer an Mark Harrower from The Pennsylvania State University
+
 For visualizing geographic information without coding, refer to the following:
 
-- Mapbox Studio is an open-source graphical interface for designing map layers as well as developing data-driven styling
-- Mapbox Cartogram is an open-source tool to help design a map layer based on a reference image
+- [Mapbox Studio](https://www.mapbox.com/mapbox-studio/) is an open-source graphical interface for designing map layers as well as developing data-driven styling
+- [Mapbox Cartogram](https://apps.mapbox.com/cartogram/#13.01/40.7251/-74.0051) is an open-source tool to help design a basemap based on a reference image
 - Tableau
 
 For visualizing geographic information as web development maps, so JavaScript coding, refer to the following open source libraries:
