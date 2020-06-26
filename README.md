@@ -8,7 +8,9 @@ Before jumping into geographic data visualization, I highly recommend reading th
 
 - [Mapping and Geographic Information Systems (GIS) : What is GIS?](https://researchguides.library.wisc.edu/GIS)
 - [Vector vs. Raster data models](https://gisgeography.com/spatial-data-types-vector-raster/)
-- [Map projections](https://www.gislounge.com/map-projection/)
+- [Map projections](https://www.gislounge.com/map-projection/); [Map projections and coordinate reference systems (CRS)](https://docs.qgis.org/testing/en/docs/gentle_gis_introduction/coordinate_reference_systems.html)
+  - [Handling map projections in Tableau](https://community.tableau.com/people/sarah.battersby.0/blog/2017/05/12/working-with-projected-data-in-tableau-part-i-map-projection-basics) (but goes into pros/cons of the popular Web Mercator projection)
+  - [Types of CRS](https://spatialreference.org)
 - [Scale / Modifiable Areal Unit Problem (MAUP)](https://www.gislounge.com/modifiable-areal-unit-problem-gis/)
 - [Cartographic design](https://gisgeography.com/map-elements-how-to-guide-map-making/)
 - [Tile maps](https://en.wikipedia.org/wiki/Tiled_web_map)
@@ -43,7 +45,7 @@ The rest of this document discuss some data sources and the technologies to acco
 
 Before setting up a GIS or conducting a spatial analysis, first thing is knowing what data you have available to use. The following are open geographic data source I use regularly:
 
-- [OpenStreetMap (OSM)](https://www.openstreetmap.org/), an international crowdsourcing project aimed at collecting an open source dataset of geographic information. Within Canada, there has been academic research to assess the quality of OSM data, particularly the road network, which researchers have concluded is accurate, though depends on your use case (Jacobs 2017; Zhang 2018). For example, road networks in Canada are reliable, but addresses are not complete in Canada. 
+- [OpenStreetMap (OSM)](https://www.openstreetmap.org/), an international crowdsourcing project aimed at collecting an open source dataset of geographic information. Within Canada, there has been academic research to assess the quality of OSM data, particularly the road network, which researchers have concluded is accurate, though depends on your use case (Jacobs 2017; Zhang 2018). For example, road networks in Canada are reliable, but addresses are not complete in Canada.
   - Download OSM data from [Geofabrik](https://www.geofabrik.de/data/download.html), a web site that allows you to download the data in different formats and at different geographic scales (e.g., Canada, provincial, territorial, cities)
   - Contribute and download OSM data from [Java OSM (JOSM)](https://josm.openstreetmap.de/). JOSM is an open-source graphic interface to contribute, edit, validate OSM data, but can also be used to extract and visualize geospatial data as well
 - Provincial and municipal open data portals
